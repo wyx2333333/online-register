@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.unary.bcm.login.mapper.RegCodeInfoMapper">
+
+    <select id="getRegCodeInfo" resultType="cn.com.unary.bcm.login.pojo.RegCodeInfo" >
+        SELECT *
+        FROM registration_code_info
+    </select>
+
+    <insert id="addRegCodeInfo" parameterType="cn.com.unary.bcm.login.pojo.RegCodeInfo" >
+        INSERT INTO registration_code_info (name, mobile, email, location, validPeriod, active, registration_code)
+        VALUES (#{name}, #{mobile}, #{email}, #{location}, #{validPeriod}, #{active}, #{registrationCode})
+    </insert>
+
+</mapper>

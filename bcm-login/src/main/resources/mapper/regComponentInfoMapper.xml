@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.unary.bcm.login.mapper.RegComponentInfoMapper">
+
+    <select id="getRegComponentInfo" resultType="cn.com.unary.bcm.login.pojo.RegComponentInfo" >
+        SELECT *
+        FROM registration_component_info
+    </select>
+
+    <insert id="addRegComponentInfo" parameterType="cn.com.unary.bcm.login.pojo.RegComponentInfo" >
+        INSERT INTO registration_component_info (computer_name, sys_install_time, cpu, mac, ip, registration_code, check_component)
+        VALUES (#{computerName}, #{sysInstallTime}, #{cpu}, #{mac}, #{ip}, #{registrationCode}, #{checkComponent})
+    </insert>
+
+</mapper>
