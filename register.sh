@@ -1,6 +1,6 @@
 # 自动化编译打包脚本
 
-ROOT_PATH="/e/注册激活/branches/online_reg_0.2"
+ROOT_PATH="" #bcm的根目录
 BCM_PATH=$ROOT_PATH/bcm
 WEB_PATH=$BCM_PATH/bcm-web
 LOGIN_PATH=$BCM_PATH/bcm-login
@@ -34,14 +34,6 @@ function build_maven () {
     cd $BCM_PATH;
     mvn clean package -DskipTests;
 }
-
-# 备份数据
-# function backup (){
-#     print "4. backup"
-#     cd $ROOT_PATH;
-#     cd "..";
-#     cp "$MAIN_JAR_PATH" "$BAK_PATH.`date +%Y-%m-%d-%H-%M-%S`"
-# }
 
 # 拷贝Jar包
 function copy_jar () {
